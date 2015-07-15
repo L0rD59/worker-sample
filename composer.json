@@ -1,0 +1,13 @@
+{
+    "require": {
+        "swarrot/swarrot": "~2.0@stable",
+        "monolog/monolog": "~1.6@stable",
+        "symfony/console": "~2.3@stable"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {"": "src/"}
+    }
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+
+use LIG\Extensions\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Debug\Debug;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+
+$application = new Application();
+
+$application->run();

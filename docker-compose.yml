@@ -1,0 +1,22 @@
+php:
+  build: .
+  dockerfile: dockerfiles/php/Dockerfile
+  environment:
+    APP_BROKER_LOGIN: guest
+    APP_BROKER_PASSWORD: guest
+    APP_BROKER_VHOST: "/"
+  volumes:
+    - .:/app
+  links:
+    - rabbitmq
+
+composer:
+  image: composer/composer
+  volumes:
+    - .:/app
+
+rabbitmq:
+  hostname: rabbitmq
+  image: rabbitmq:3-management
+  ports:
+    - "15672"
