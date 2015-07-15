@@ -23,6 +23,7 @@ RUN tar -xf /usr/src/php/ext/amqp.tgz -C /usr/src/php/ext/ && \
 # Configurations
 RUN ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
+RUN echo "date.timezone = \"Europe/Paris\"" > /usr/local/etc/php/conf.d/timezone.ini
 
 # Set working directory.
 WORKDIR /app
