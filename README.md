@@ -8,9 +8,12 @@ One **eXchange** "sample" *type* "direct" biding to a **Queue** "sample" with *r
 It's this eXchange that we will use for publish message.
 
 Another **eXchange** "sample_retry" *type* "direct" biding to three **Queues** : 
-    - "sample_retry_1" with *x-message-ttl* to 30000 and *x-dead-letter* to "sample" biding with *routing_key* "sample_retry_1". 
-    - "sample_retry_2" with *x-message-ttl* to 6000000 and *x-dead-letter* to "sample" biding with *routing_key* "sample_retry_2". 
-    - "sample_retry_3" biding with *routing_key* "sample_retry_3".
+
+1. "sample_retry_1" with *x-message-ttl* to 30000 and *x-dead-letter* to "sample" biding with *routing_key* "sample_retry_1". 
+
+2. "sample_retry_2" with *x-message-ttl* to 6000000 and *x-dead-letter* to "sample" biding with *routing_key* "sample_retry_2". 
+
+3. "sample_retry_3" biding with *routing_key* "sample_retry_3".
 
 Messages will be consumed from "sample" queue. During consume process if an exception is threw Swarrot will republish the message in "sample_retry" eXchange with **routing_key** "sample_retry_1". 
 This message will wait 30 seconds in "sample_retry_1" queue before being republished in **x-dead-letter** "sample" by RabbitMQ to be consumed again by the worker. 
