@@ -47,6 +47,7 @@ class ConfigureCommand extends Command
         $queue->setFlags(AMQP_DURABLE);
         $queue->declareQueue();
         $queue->bind('sample', 'sample');
+        $queue->bind('sample_retry', 'sample_retry');
 
         $queueRetry1 = new \AMQPQueue($channel);
         $queueRetry1->setName('sample_retry_1');

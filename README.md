@@ -36,6 +36,10 @@ Install composer dependencies `docker-compose run --rm composer install`
 
 ### Usage
 
-Run `docker-compose run -T --rm php app/console list`.
+Run `docker-compose run --rm php app/console configure` to configure RabbitMQ Exchanges and Queues
+
+Run `docker-compose run --rm php app/console populate` to send 1000 messages in RabbitMQ
+
+Run `docker-compose run --rm php app/console consume` to consume messages from RabbitMQ
 
 Run `docker-compose port rabbitmq 15672` to see the address of rabbitMQ management.
